@@ -61,6 +61,7 @@ public class SecurityConfiguration {
 						"/", "/oups", "/api/v1/auth/**", "/v3/api-docs/**", "/swagger-ui.html",
 						"/swagger-ui/**", "/api/v1/developers", "/api/v1/plan", "/h2-console/**").permitAll()
 				.requestMatchers("/api/v1/users/**").hasAuthority(ADMIN)
+				.requestMatchers("/api/v1/federation/*/records").hasAuthority(ADMIN)
 				.requestMatchers("/api/v1/matches/**").hasAnyAuthority(PLAYER)
 				.anyRequest().authenticated())					
 			

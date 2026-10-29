@@ -43,5 +43,11 @@ public class ChessEventService {
     public List<User> getParticipantsByEventId(Integer eventId) {
         return chessEventRepository.findParticipantsByEventId(eventId);
     }
+
+    @Transactional(readOnly = true)
+    public List<User> getUsersWithLowUpcomingParticipations(List<Federation> federations, LocalDate date,
+            Integer numParticipations) {
+        return chessEventRepository.findUsersWithLowUpcomingParticipations(federations, date, numParticipations);
+    }
     
 }

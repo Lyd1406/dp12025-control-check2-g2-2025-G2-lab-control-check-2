@@ -197,3 +197,15 @@ INSERT INTO chess_event_participant (chess_event_id, participant_id) VALUES
   (16,5),(16,9),(16,10);
 
 ----------------------------------------------------------------
+
+INSERT INTO referee (id, name, license_number, certification_date, certified_by_id) VALUES
+  (1, 'John Peterson', 'REF2025001', '2000-01-06', 2),
+  (2, 'María González', 'REF2025002', '1998-12-14', 3);
+
+INSERT INTO sanction (id, description, monetary_fine, type, imposed_by_id, imposed_on_id, rule_broken_id) VALUES
+  (1, 'Unsportsmanlike conduct. Disrespect toward an opponent.', 500.0, 'EXPULSION', 2, 9, 36),
+  (2, 'The player arrived late to the playing area.', NULL, 'WARNING', 1, 6, NULL);
+
+INSERT INTO referee_assigned_to (referee_id, assigned_to_id) VALUES
+  (1, 3), (1, 4), (1, 5), (1, 6),
+  (2, 3), (2, 4), (2, 7);
